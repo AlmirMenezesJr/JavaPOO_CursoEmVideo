@@ -14,7 +14,8 @@ public class Aula01 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.our.print("junior");
+        System.out.print("junior");
+        System.out.println("mudado pelo pc para o git hub");
         // TODO code application logic here
     }
     
