@@ -14,6 +14,7 @@ public class Aula01 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        System.our.print("junior");
         // TODO code application logic here
     }
     
