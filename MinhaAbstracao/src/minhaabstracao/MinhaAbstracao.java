@@ -16,7 +16,7 @@ public class MinhaAbstracao {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       
+    
         java.util.Scanner teclado = new Scanner(System.in);     
         Usuario usuario = new Usuario();
         TrincaPonto novo = new TrincaPonto();
