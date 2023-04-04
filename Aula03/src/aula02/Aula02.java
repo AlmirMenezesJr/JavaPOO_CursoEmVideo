@@ -26,14 +26,7 @@ public class Aula02 {
         
          c1.status();
          
-         c1.rabiscar();
-         
-         
-        
-        
-        
-        
-        
+         c1.rabiscar();       
     }
     
 }
