@@ -8,9 +8,9 @@ package ultraemojicombate;
  *
  * @author jr_jm
  */
-public class Lutador {
+public class Lutador implements GerenciadorLutas {
     private String nome;
-    private String Nacionalidade;
+    private String nacionalidade;
     private int idade;
     private float altura;
     private float peso;
@@ -21,16 +21,15 @@ public class Lutador {
     
     // construtor
 
-    public Lutador(String nome, String Nacionalidade, int idade, float altura, float peso, String categoria) {
+    public Lutador(String nome, String nacionalidade, int idade, float altura, float peso, int vit, int der, int emp) {
         this.nome = nome;
-        this.Nacionalidade = Nacionalidade;
-        this.idade = idade;
+        this.nacionalidade = nacionalidade;
+        this.idade = idade; 
         this.altura = altura;
-        this.peso = peso;
-        this.categoria = categoria;
-        this.vitorias = 0;
-        this.derrotas = 0;
-        this.empates = 0;
+        this.setPeso(peso);
+        this.vitorias = vit;
+        this.derrotas = der;
+        this.empates = emp;
     }
 
     
@@ -45,11 +44,11 @@ public class Lutador {
     }
 
     public String getNacionalidade() {
-        return Nacionalidade;
+        return nacionalidade;
     }
 
-    public void setNacionalidade(String Nacionalidade) {
-        this.Nacionalidade = Nacionalidade;
+    public void setNacionalidade(String nacionalidade) {
+        this.nacionalidade = nacionalidade;
     }
 
     public int getIdade() {
@@ -72,16 +71,27 @@ public class Lutador {
         return peso;
     }
 
-    public void setPeso(float peso) {
+    private void setPeso(float peso) {
         this.peso = peso;
+        setCategoria(this.getPeso());
     }
 
     public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    private void setCategoria(float peso) {
+        if (peso < 52.2){
+            this.categoria = "Invalido - abaixo peso";
+        } else if (peso <= 70.3 ){
+            this.categoria = "Leve";
+        } else if (peso <= 83.9) {
+            this.categoria = "Medio";
+        } else if (peso <= 120.2){
+            this.categoria = "Pesado";
+        } else {
+            this.categoria = "Invalido - acima peso";
+        }
     }
 
     public int getVitorias() {
@@ -109,20 +119,44 @@ public class Lutador {
     }
     
     // Metodos específicos
-    
-    public void apresentar(){
-        
+
+    @Override
+    public void apresentar() {
+        System.out.println("______________ LUTADOR _____________");
+        System.out.println("Categoria: "+ this.getCategoria());
+        System.out.println("Lutador: "+ this.getNome());
+        System.out.println("Origem:"+ this.getNacionalidade());
+        System.out.println("Idade: "+ this.getIdade());
+        System.out.println("Altura: "+ this.getAltura()+" mts");
+        System.out.println("Peso: "+this.getPeso()+ "KG");
+        System.out.println("Vitorias: "+ this.getVitorias());
+        System.out.println("Derrotas: "+ this.getDerrotas());
+        System.out.println("Empates: "+ this.getEmpates());
     }
-    public void status(){
-        
+
+    @Override
+    public void status() {
+        System.out.println("------------------------------");
+        System.out.println("     Lutador: "+this.getNome()+"     ");
+        System.out.println("------------------------------");
+        System.out.println("Peso "+ this.getCategoria());
+        System.out.println(this.getVitorias()+" Vitorias");
+        System.out.println(+this.getDerrotas()+" Derrotas");
+        System.out.println(this.getEmpates()+ " Empates");
     }
-    public void ganharLuta(){
-        
+
+    @Override
+    public void ganharLuta() {
+        this.setVitorias(this.getVitorias() + 1);
     }
-    public void perderLuta(){
-        
+
+    @Override
+    public void perderLuta() {
+        this.setDerrotas(this.getDerrotas() + 1);
     }
-    public void empatarLuta(){
-        
+
+    @Override
+    public void empatarLuta() {
+        this.setEmpates(getEmpates() + 1);
     }
 }
