@@ -9,19 +9,24 @@ public class ExemploBanco{
         ContaBanco user2 = new ContaBanco();
         user1.setNumeroConta(0001);
         user1.setNome("Almir Menezes Junior");
-        user1.setNumeroConta(0002);
+        user2.setNumeroConta(0002);
         user2.setNome("Natalia Santos Menezes");
         
-        user1.abrirConta("CP");
-        user2.abrirConta("CC");
+        user1.abrirConta("CC");
+        user2.abrirConta("CP");
         
+        user1.depositar(100);
+        user2.depositar(500);
         
+        user2.sacar(100);
+        user1.sacar(150);
+        
+        user1.fecharConta();
         
         user1.estadoAtual();
         user2.estadoAtual();
         
-        user1.sacar(50);
-        user2.fecharConta();
+        
         
         
         

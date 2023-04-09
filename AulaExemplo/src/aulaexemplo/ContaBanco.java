@@ -79,7 +79,7 @@ public class ContaBanco {
             System.out.println("Conta fechada com sucesso!");
         }
     }
-    public void depositar(double v){
+    public void depositar(float v){
         if(getStatus()){
             this.setSaldo(this.getSaldo() + v);
             System.out.println("Deposito realizado no valor R$"+v);
@@ -100,20 +100,28 @@ public class ContaBanco {
     }
     
     public void pagarMensalidade(){
-        if (getStatus() && this.getTipo().equals("CC")){
-            this.setSaldo(this.getSaldo() - 12);
-        } else if(getStatus() && this.getTipo().equals("CP")){
-            this.setSaldo(this.getSaldo() - 20);
+        int v = 0;
+        if (this.getTipo().equals("CC")){
+            v = 12;
+        } else if (this.getTipo().equals("CP")){
+            v = 20;
+        } 
+        if (getStatus()){
+            this.setSaldo(getSaldo()+v);
+            System.out.printf("Mensalidade paga no valor de R$%s",v);
+        } else {
+            System.out.println("Erro. conta fechada.");
         }
     }
     
      public void estadoAtual(){
-         System.out.printf("Ola %s, como vai? %n", this.nome);
+         System.out.println("______________________________");
          System.out.printf("Conta: %s%n", this.numeroConta);
+         System.out.printf("Ola %s, como vai? %n", this.nome);
          System.out.printf("O tipo da conta e:  %s%n", this.getTipo());
          System.out.printf("Seu saldo e R$: %s%n", this.getSaldo()); 
          System.out.printf("Estado da conta %s%n", this.getStatus());
-         System.out.println(getTipo());
+         System.out.println("_____________________________");
          
      }
              
