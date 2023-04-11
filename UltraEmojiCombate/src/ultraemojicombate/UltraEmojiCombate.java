@@ -22,17 +22,16 @@ public class UltraEmojiCombate {
         l[0] = new Lutador("Almir Menezes Jr", "Brasil", 26, 1.71f, 80f, 15, 1, 2);
         l[1] = new Lutador("Putscrypt", "EUA", 29, 1.68f, 57.8f, 14,2,3);
         l[2] = new Lutador("Snapshadow","England", 35,1.65f, 68.9f, 12, 2,1);
-        l[3] = new Lutador("DEad Code", "Australia", 28, 1.93f, 81.6f, 13,0,2);
+        l[3] = new Lutador("Dead Code", "Australia", 28, 1.93f, 81.6f, 13,0,2);
         l[4] = new Lutador("Nerdart", "EUA", 30, 1.91f, 105.7f, 12,2,4);
         l[5] = new Lutador("Demolidor","China", 40, 2.00f, 120f, 20,0,0);
+
+        Luta UEC01 = new Luta();
         
-        l[5].perderLuta();
-        l[5].status();
+        UEC01.marcarLuta(l[0],l[3]);
         
-        l[0].ganharLuta();
-        l[0].status();
+        UEC01.lutar();
         
         
     }
-    
 }
