@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package aula09;
+package meuaula09;
 
 /**
  *
@@ -15,19 +15,13 @@ public class Livro implements Publicacao {
     private int pagAtual;
     private boolean aberto;
     private Pessoa leitor;
-    
-    //construtor
 
     public Livro(String titulo, String autor, int totPaginas, Pessoa leitor) {
         this.titulo = titulo;
         this.autor = autor;
         this.totPaginas = totPaginas;
         this.leitor = leitor;
-        this.aberto = false;
-        this.pagAtual = 0;
     }
-    
-    // metodos publicos
 
     public String getTitulo() {
         return titulo;
@@ -77,46 +71,40 @@ public class Livro implements Publicacao {
         this.leitor = leitor;
     }
     
-    //metodos especiais
+    
 
     public String detalhes() {
-        return "####### Livro #######\n" + titulo + "\nAutor: " + autor
-                + "\ntotPaginas: " + totPaginas + "\npagAtual: " 
-                + pagAtual + "\nAberto: " + aberto + "\nleitor: " 
-                + leitor.getNome()+"\n";
+        return "##########-----------########### \n" + titulo +
+                "\n" + autor + "\nTotal de Paginas: " 
+                + totPaginas + "\nPagna Atual: " + pagAtual 
+                + "\nAberto: " + aberto + "\nleitor: " 
+                + leitor.getNome() + '\n';
     }
 
     @Override
     public void abrir() {
-        this.aberto = true;
+        this.setAberto(true);
     }
 
     @Override
     public void fechar() {
-        this.aberto = false;
+        this.setAberto(false);
     }
 
     @Override
     public void folhear(int p) {
-        if (p > this.totPaginas) {
-           this.pagAtual = 0; 
-        } else{
-            this.pagAtual = p;
-        }
-
+        this.setPagAtual(p);
     }
 
     @Override
-    public void avançarPag() {
-        this.pagAtual++;
+    public void avancarPagina() {
+        this.setPagAtual(this.getPagAtual() + 1);
     }
 
     @Override
-    public void voltarPag() {
-        this.pagAtual--;
+    public void voltarPagina() {
+        this.setPagAtual(this.getPagAtual() - 1);
     }
-    
-     
     
     
 }
