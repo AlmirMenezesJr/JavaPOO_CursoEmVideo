@@ -82,7 +82,10 @@ public class Aula12_Animais {
         
         
         cac.emitirSom();
+        cac.abanarRabo();
+        cac.alimentar();
         can.emitirSom();
+        
         
 
         

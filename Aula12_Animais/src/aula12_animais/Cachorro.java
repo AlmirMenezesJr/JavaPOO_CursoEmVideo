@@ -19,6 +19,9 @@ public class Cachorro extends Mamifero{
     public void emitirSom() {
          System.out.println("Au au au");
     }
-       
+    @Override
+    public void alimentar() {
+        System.out.println("comendo ração e carninha");
+    }
         
 }
