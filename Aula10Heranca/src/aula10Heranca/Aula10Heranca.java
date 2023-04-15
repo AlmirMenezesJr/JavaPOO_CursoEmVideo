@@ -18,40 +18,40 @@ public class Aula10Heranca {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Pessoa p1 = new Pessoa();
-        Aluno p2 = new Aluno();
-        Professor p3 = new Professor();
-        Funcionario p4 = new Funcionario();
+        Pessoa pessoa1 = new Pessoa();
+        Aluno aluno2 = new Aluno();
+        Professor professor3 = new Professor();
+        Funcionario funconario4 = new Funcionario();
         
         
-        p1.setNome("junior");
-        p2.setNome("Marcia");
-        p3.setNome("Claudio");
-        p4.setNome("fabiana");
+        pessoa1.setNome("junior");
+        aluno2.setNome("Marcia");
+        professor3.setNome("Claudio");
+        funconario4.setNome("fabiana");
         
-        p1.setSexo("M");
-        p2.setSexo("F");
-        p3.setSexo("M");
-        p4.setSexo("F");
+        pessoa1.setSexo("M");
+        aluno2.setSexo("F");
+        professor3.setSexo("M");
+        funconario4.setSexo("F");
         
-        p1.setIdade(36);
-        p2.setIdade(22);
-        p3.setIdade(40);
-        p4.setIdade(50);
+        pessoa1.setIdade(36);
+        aluno2.setIdade(22);
+        professor3.setIdade(40);
+        funconario4.setIdade(50);
         
-        p2.setCurso("Informatica");
-        p3.setSalario(2500.75f);
-        p4.setSetor("estoque");
+        aluno2.setCurso("Informatica");
+        professor3.setSalario(2500.75f);
+        funconario4.setSetor("estoque");
         
        // p1.receberAumento(540);
         //p2.mudaTrabalho();
         //p4.cancelarMatricula();
         
         
-        System.out.println(p1.toString());
-        System.out.println(p2.toString());
-        System.out.println(p3.toString());
-        System.out.println(p4.toString());
+        System.out.println(pessoa1.toString());
+        System.out.println(aluno2.toString());
+        System.out.println(professor3.toString());
+        System.out.println(funconario4.toString());
         
     }
     
