@@ -2,30 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package aula12_animais;
+package aula13;
 
 /**
  *
  * @author jr_jm
  */
 public class Cachorro extends Lobo{
-    public void enterrarOsso(){
-        System.out.println("Enterrando osso!");
-    }
+   
     public void abanarRabo(){
-        System.out.println("abanando o rabo!");
+        System.out.println("Abanando Rabo!");
     }
-    @Override
-    public void emitirSom() {
-         System.out.println("Au au au");
-    }
-    @Override
-    public void alimentar() {
-        System.out.println("comendo ração e carninha");
-    }
-        
     
-    public void reagir(String frase){
+    @Override
+    public void emitirSom(){
+        System.out.println("au au au au!!!");
+    }
+    
+       public void reagir(String frase){
         if(frase.equals("toma comida")||frase.equals("Olá")){
            System.out.println("Abanar e Latir");
            this.abanarRabo();
@@ -69,5 +63,5 @@ public class Cachorro extends Lobo{
                 System.out.println("Ignorar");
             }
         }
-    }     
+    }
 }

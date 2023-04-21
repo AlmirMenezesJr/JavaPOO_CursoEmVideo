@@ -66,9 +66,10 @@ public class Aula12_Animais {
         // objetos de subclasses
         
         Canguru can = new Canguru();
-        Cachorro cac = new Cachorro();
+        Cachorro cao = new Cachorro();
         Cobra cob = new Cobra();
         Aguia agu = new Aguia();
+        Lobo lob = new Lobo();
         
         can.setIdade(3);
         can.setMembros(2);
@@ -81,10 +82,33 @@ public class Aula12_Animais {
         System.out.print("________________________\n\n");
         
         
-        cac.emitirSom();
-        cac.abanarRabo();
-        cac.alimentar();
+        cao.emitirSom();
+        cao.abanarRabo();
+        cao.alimentar();
         can.emitirSom();
+                System.out.print("________________________\n\n");
+
+        cao.emitirSom();
+        lob.emitirSom();
+        
+        
+        cao.reagir("Olá");
+         System.out.print("________________________\n\n");               
+        cao.reagir("Vai apanhar");
+         System.out.print("________________________\n\n");
+        cao.reagir(11,45);
+         System.out.print("________________________\n\n");
+         cao.reagir(21,00);
+         System.out.print("________________________\n\n");
+         cao.reagir(true);
+         System.out.print("________________________\n\n");
+         cao.reagir(false);
+         System.out.print("________________________\n\n");
+         cao.reagir(2,12.5f);
+         System.out.print("________________________\n\n");
+         cao.reagir(17,22f);
+        
+        
         
         
 
